@@ -252,16 +252,33 @@
     :cond_38
     iput-byte v1, p0, Lnn1;->i:B
 
-    .line 58
-    .line 59
     iget-object p1, p0, Lnn1;->m:Lh21;
 
-    .line 60
-    .line 61
+    iget-object v1, p0, Lnn1;->l:Ljava/lang/String;
+
+    const-string v2, "writer"
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_groq_nn1
+
+    const-string v1, "https://api.writer.com/v1"
+
+    invoke-virtual {p1, v0, v1, p0}, Lh21;->b(Ljava/lang/String;Ljava/lang/String;Ldt;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-ne p0, v3, :cond_45
+
+    goto :goto_44
+
+    :cond_groq_nn1
+    iget-object p1, p0, Lnn1;->m:Lh21;
+
     const-string v1, "https://api.groq.com/openai/v1"
 
-    .line 62
-    .line 63
     invoke-virtual {p1, v0, v1, p0}, Lh21;->b(Ljava/lang/String;Ljava/lang/String;Ldt;)Ljava/lang/Object;
 
     .line 64

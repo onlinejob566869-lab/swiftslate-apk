@@ -1562,6 +1562,29 @@
 
     .line 656
     .line 657
+    const-string v8, "writer"
+
+    invoke-static {v6, v8}, Ldj0;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3ec_writer
+
+    const v6, -0x1ce5c61c
+
+    invoke-virtual {v15, v6}, Llb0;->Y(I)V
+
+    const v6, 0x7f0a00ca
+
+    invoke-static {v6, v15}, Lj80;->L(ILlb0;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v15, v3}, Llb0;->q(Z)V
+
+    goto :cond_3ec
+
+    :cond_3ec_writer
     const-string v8, "groq"
 
     .line 658

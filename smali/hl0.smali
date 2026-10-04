@@ -842,6 +842,37 @@
 
     .line 241
     :cond_f0
+    const-string v12, "writer"
+
+    invoke-virtual {v1, v12}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-eqz v12, :cond_groq_hl0
+
+    iget-object v3, v0, Lhl0;->z:Lh21;
+
+    iput-object v13, v0, Lhl0;->l:Ljava/lang/Object;
+
+    iput-object v2, v0, Lhl0;->i:Ljava/lang/String;
+
+    iput-object v13, v0, Lhl0;->j:Lox0;
+
+    const/4 v1, 0x3
+
+    iput-byte v1, v0, Lhl0;->k:B
+
+    const-string v1, "https://api.writer.com/v1"
+
+    invoke-virtual {v3, v2, v1, v0}, Lh21;->f(Ljava/lang/String;Ljava/lang/String;Ldt;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-ne v1, v14, :cond_135
+
+    goto/16 :goto_18a
+
+    :cond_groq_hl0
     const-string v12, "groq"
 
     .line 242

@@ -250,6 +250,7 @@
     <public type="string" name="settings_provider_custom" id="0x7f0a00c2" />
     <public type="string" name="settings_provider_gemini" id="0x7f0a00c3" />
     <public type="string" name="settings_provider_groq" id="0x7f0a00c4" />
+    <public type="string" name="settings_provider_writer" id="0x7f0a00ca" />
     <public type="string" name="settings_provider_title" id="0x7f0a00c5" />
     <public type="string" name="settings_sponsor" id="0x7f0a00c6" />
     <public type="string" name="settings_temperature_title" id="0x7f0a00c7" />

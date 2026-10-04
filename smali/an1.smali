@@ -182,9 +182,27 @@
     .line 53
     const-string v16, "groq"
 
-    .line 54
-    .line 55
     iget-object v5, v0, Lan1;->i:Lku;
+
+    iget-object v6, v0, Lan1;->j:Lox0;
+
+    invoke-interface {v6}, Lwr1;->getValue()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    const-string v7, "writer"
+
+    invoke-static {v6, v7}, Ldj0;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_an1_writer_done
+
+    const-string v16, "writer"
+
+    :cond_an1_writer_done
 
     .line 56
     .line 57

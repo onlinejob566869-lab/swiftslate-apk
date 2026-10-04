@@ -272,6 +272,22 @@
     move-result p1
 
     .line 34
+    if-nez p1, :cond_23
+
+    iget-object p1, p0, Lin1;->i:Lox0;
+
+    invoke-interface {p1}, Lwr1;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    const-string v1, "writer"
+
+    invoke-static {p1, v1}, Ldj0;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
     if-eqz p1, :cond_74
 
     .line 35

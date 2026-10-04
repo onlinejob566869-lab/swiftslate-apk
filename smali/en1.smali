@@ -95,6 +95,30 @@
     .line 24
     .line 25
     .line 26
+    const-string p0, "writer"
+
+    invoke-interface {v6, p0}, Lox0;->setValue(Ljava/lang/Object;)V
+
+    invoke-interface {v7}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, v3, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {v5, p0}, Lox0;->setValue(Ljava/lang/Object;)V
+
+    return-object v1
+
     const-string p0, "custom"
 
     .line 27

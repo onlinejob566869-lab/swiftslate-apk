@@ -1687,6 +1687,19 @@
 
     .line 324
     :cond_143
+    const-string v6, "writer"
+
+    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_writer_chk
+
+    sget-object v5, Lwri;->a:Lwri;
+
+    goto :goto_150
+
+    :cond_writer_chk
     const-string v6, "custom"
 
     .line 325

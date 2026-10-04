@@ -117,6 +117,7 @@
     <string name="settings_provider_custom">Custom (OpenAI Compatible)</string>
     <string name="settings_provider_gemini">Google Gemini</string>
     <string name="settings_provider_groq">Groq</string>
+    <string name="settings_provider_writer">Writer AI</string>
     <string name="settings_provider_title">Model Provider</string>
     <string name="settings_sponsor">Sponsor on GitHub</string>
     <string name="settings_temperature_title">Temperature</string>

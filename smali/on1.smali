@@ -468,6 +468,19 @@
 
     .line 119
     :cond_76
+    const-string v6, "writer"
+
+    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_76_groq
+
+    sget-object v2, Lu70;->b:Lyc1;
+
+    goto :cond_7e
+
+    :cond_76_groq
     invoke-virtual {v5, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 120
@@ -545,6 +558,19 @@
 
     .line 154
     :cond_99
+    const-string v0, "writer"
+
+    invoke-virtual {v2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a1
+
+    sput-object v5, Lu70;->b:Lyc1;
+
+    goto :cond_a1
+
+    :cond_99_groq
     invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 155

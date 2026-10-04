@@ -1340,6 +1340,25 @@
 
     .line 583
     :cond_246
+    const-string v0, "writer"
+
+    invoke-virtual {v3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_custom_cl0
+
+    new-instance v0, Li51;
+
+    const-string v2, "https://app.writer.com/ai-studio/api-keys"
+
+    const-string v3, "Writer AI"
+
+    invoke-direct {v0, v2, v3}, Li51;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_25e
+
+    :cond_custom_cl0
     const-string v0, "custom"
 
     .line 584

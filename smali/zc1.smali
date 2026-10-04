@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 4
 
     .line 1
     const-string v0, "groq"
@@ -26,25 +26,28 @@
 
     .line 6
     .line 7
-    filled-new-array {v2, v0, v1}, [Ljava/lang/String;
+    const-string v3, "writer"
 
     .line 8
+    filled-new-array {v2, v0, v1, v3}, [Ljava/lang/String;
+
     .line 9
     .line 10
-    move-result-object v0
-
     .line 11
-    invoke-static {v0}, Lzc;->w0([Ljava/lang/Object;)Ljava/util/Set;
+    move-result-object v0
 
     .line 12
+    invoke-static {v0}, Lzc;->w0([Ljava/lang/Object;)Ljava/util/Set;
+
     .line 13
     .line 14
+    .line 15
     move-result-object v0
 
-    .line 15
+    .line 16
     sput-object v0, Lzc1;->a:Ljava/util/Set;
 
-    .line 16
     .line 17
+    .line 18
     return-void
 .end method
