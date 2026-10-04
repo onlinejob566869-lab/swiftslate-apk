@@ -52,18 +52,18 @@ jobs:
             --v1-signing-enabled true \
             --v2-signing-enabled true \
             --v3-signing-enabled true \
-            --out SwiftSlate_v1.0.82_signed.apk \
+            --out SwiftSlate_v1.1_signed.apk \
             app_aligned.apk
 
       - name: Verify signature
         run: |
-          apksigner verify --verbose SwiftSlate_v1.0.82_signed.apk
+          apksigner verify --verbose SwiftSlate_v1.1_signed.apk
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: SwiftSlate-signed-apk
-          path: SwiftSlate_v1.0.82_signed.apk
+          path: SwiftSlate_v1.1_signed.apk
           retention-days: 90
 
     env:
