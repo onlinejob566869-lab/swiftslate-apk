@@ -1,0 +1,62 @@
+###### Class defpackage.v81 (v81)
+
+.class public abstract Lv81;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:Ld20;
+
+.field public static final b:Lu81;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 3
+
+    .line 1
+    new-instance v0, Lnj0;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x11
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lnj0;-><init>(B)V
+
+    .line 6
+    .line 7
+    .line 8
+    new-instance v1, Ld20;
+
+    .line 9
+    .line 10
+    const/4 v2, 0x1
+
+    .line 11
+    invoke-direct {v1, v0, v2}, Ld20;-><init>(Lea0;B)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v1, Lv81;->a:Ld20;
+
+    .line 15
+    .line 16
+    new-instance v0, Lu81;
+
+    .line 17
+    .line 18
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 19
+    .line 20
+    .line 21
+    sput-object v0, Lv81;->b:Lu81;
+
+    .line 22
+    .line 23
+    return-void
+.end method

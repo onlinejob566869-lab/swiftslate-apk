@@ -1,0 +1,83 @@
+###### Class defpackage.xv (xv)
+
+.class public final Lxv;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lbg0;
+
+
+# static fields
+.field public static final a:Lxv;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 1
+    new-instance v0, Lxv;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lxv;->a:Lxv;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Loi0;)Lgx;
+    .registers 2
+
+    .line 1
+    new-instance p0, Lwv;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p1}, Lwv;-><init>(Loi0;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 2
+
+    .line 1
+    if-ne p1, p0, :cond_4
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_4
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    .line 1
+    const/4 p0, -0x1
+
+    .line 2
+    return p0
+.end method

@@ -1,0 +1,6 @@
+release.jks
+app_unsigned.apk
+app_aligned.apk
+*.apk
+apktool.jar
+cmdtools.zip

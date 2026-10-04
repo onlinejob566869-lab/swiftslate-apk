@@ -1,0 +1,30 @@
+###### Class defpackage.lr1 (lr1)
+
+.class public abstract Llr1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static final a:F
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 1
+    invoke-static {}, Landroid/view/ViewConfiguration;->getScrollFriction()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    sput v0, Llr1;->a:F
+
+    .line 6
+    .line 7
+    return-void
+.end method

@@ -1,0 +1,27 @@
+###### Class defpackage.xx0 (xx0)
+
+.class public final Lxx0;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public final a:Ltj0;
+
+
+# direct methods
+.method public constructor <init>(Ltj0;)V
+    .registers 2
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lxx0;->a:Ltj0;
+
+    .line 5
+    .line 6
+    return-void
+.end method

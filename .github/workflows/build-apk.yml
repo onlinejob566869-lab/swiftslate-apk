@@ -1,0 +1,73 @@
+name: Build SwiftSlate APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Download apktool 3.0.3
+        run: |
+          wget -q https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar -O apktool.jar
+          chmod +x apktool.jar
+
+      - name: Build APK with apktool
+        run: |
+          java -Xmx1280m -jar apktool.jar b . -o app_unsigned.apk -f
+
+      - name: Set up Android SDK build-tools
+        run: |
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O cmdtools.zip
+          unzip -q cmdtools.zip -d $HOME/android-sdk
+          yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk "build-tools;34.0.0" >/dev/null 2>&1
+          echo "$HOME/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
+
+      - name: Zipalign
+        run: |
+          zipalign -f -p 4 app_unsigned.apk app_aligned.apk
+
+      - name: Decode keystore
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > release.jks
+
+      - name: Sign APK
+        run: |
+          apksigner sign \
+            --ks release.jks \
+            --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass pass:"$KEYSTORE_PASSWORD" \
+            --key-pass pass:"$KEY_PASSWORD" \
+            --v1-signing-enabled true \
+            --v2-signing-enabled true \
+            --v3-signing-enabled true \
+            --out SwiftSlate_v1.0.82_signed.apk \
+            app_aligned.apk
+
+      - name: Verify signature
+        run: |
+          apksigner verify --verbose SwiftSlate_v1.0.82_signed.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SwiftSlate-signed-apk
+          path: SwiftSlate_v1.0.82_signed.apk
+          retention-days: 90
+
+    env:
+      KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+      KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+      KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}

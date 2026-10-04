@@ -1,0 +1,225 @@
+###### Class defpackage.ui (ui)
+
+.class public final Lui;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lwq0;
+
+
+# instance fields
+.field public final e:Ljava/lang/ref/WeakReference;
+
+.field public final f:Lti;
+
+
+# direct methods
+.method public constructor <init>(Lri;)V
+    .registers 3
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Lti;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p0}, Lti;-><init>(Lui;)V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lui;->f:Lti;
+
+    .line 10
+    .line 11
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    .line 12
+    .line 13
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    .line 14
+    .line 15
+    .line 16
+    iput-object v0, p0, Lui;->e:Ljava/lang/ref/WeakReference;
+
+    .line 17
+    .line 18
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    .registers 3
+
+    .line 1
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Ll0;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final cancel(Z)Z
+    .registers 3
+
+    .line 1
+    iget-object v0, p0, Lui;->e:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lri;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0, p1}, Ll0;->cancel(Z)Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    if-eqz p0, :cond_1c
+
+    .line 16
+    .line 17
+    if-eqz v0, :cond_1c
+
+    .line 18
+    .line 19
+    const/4 p1, 0x0
+
+    .line 20
+    iput-object p1, v0, Lri;->a:Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    iput-object p1, v0, Lri;->b:Lui;
+
+    .line 23
+    .line 24
+    iget-object v0, v0, Lri;->c:Lbf1;
+
+    .line 25
+    .line 26
+    invoke-virtual {v0, p1}, Lbf1;->j(Ljava/lang/Object;)Z
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_1c
+    return p0
+.end method
+
+.method public final get()Ljava/lang/Object;
+    .registers 1
+
+    .line 1
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ll0;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .registers 4
+
+    .line 8
+    iget-object p0, p0, Lui;->f:Lti;
+
+    invoke-virtual {p0, p1, p2, p3}, Ll0;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final isCancelled()Z
+    .registers 1
+
+    .line 1
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ll0;->e:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    instance-of p0, p0, Le0;
+
+    .line 6
+    .line 7
+    return p0
+.end method
+
+.method public final isDone()Z
+    .registers 1
+
+    .line 1
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ll0;->isDone()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    .line 1
+    iget-object p0, p0, Lui;->f:Lti;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ll0;->toString()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
